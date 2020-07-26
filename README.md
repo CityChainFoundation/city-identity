@@ -24,6 +24,32 @@ Another functionality to perform verification, is verification of ownership to t
 
 ## Technology
 
-The app is built using React Native and all communication with the blockchain happens through REST API on public hubs.
+The app is built using React Native/Angular/Cordova and all communication with the blockchain happens through REST API on public hubs.
 
 App relies on local storage to keep a cache of all data, making it available offline and instantly on app start.
+
+### Cordova / Angular
+
+Navigate to "src\identity" and run:
+
+```sh
+npm run install
+npm run build
+```
+
+This will build the Angular app and output into the Cordova folder.
+
+Navigate to "src\identity-app" and run:
+
+```sh
+cordova platform add browser
+cordova run browser
+```
+
+More commands:
+
+```sh
+cordova platform add ios
+cordova platform add android
+cordova emulate ios
+```
