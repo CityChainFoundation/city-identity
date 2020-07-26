@@ -14,6 +14,17 @@ export default function TabOneScreen() {
   );
 }
 
+function getProfile() {
+  return fetch('https://identity.city-chain.org/api/identity/PHRcZvY4z86XxXey1VykYosy3BecdTDnUi')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.movies;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
