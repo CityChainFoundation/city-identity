@@ -10,5 +10,15 @@ export class ThemeService {
 
    setDarkTheme(isDarkTheme: boolean) {
       this._darkTheme.next(isDarkTheme);
+      this.saveTheme(isDarkTheme);
+   }
+
+   saveTheme(isDarkTheme: boolean) {
+      localStorage.setItem('dark-mode', isDarkTheme ? 'true' : 'false');
+   }
+
+   loadTheme() {
+      let isDarkMode = localStorage.getItem('dark-mode') === 'true';
+      this._darkTheme.next(isDarkMode);
    }
 }
