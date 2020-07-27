@@ -1,3 +1,5 @@
+@import "./theme.scss";
+
 /* You can add global styles to this file, and also import other style files */
 
 * {
@@ -6,4 +8,66 @@
 
 input {
    user-select: auto !important;
+}
+
+html,
+body {
+   height: 100%;
+}
+body {
+   margin: 0;
+   font-family: Roboto, "Helvetica Neue", sans-serif;
+   overflow: hidden;
+}
+
+.app-container {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto 1fr;
+   gap: 0;
+   grid-template-areas: "." ".";
+}
+
+.app-container {
+   height: 100%;
+}
+
+.app-header {
+}
+
+.app-content {
+}
+
+.debug .app-container {
+   border: 1px solid red;
+   height: 100%;
+}
+
+.debug .app-header {
+   border: 1px solid green;
+}
+
+.debug .app-content {
+   border: 1px solid blue;
+}
+
+.mat-tab-body-wrapper {
+   display: flex;
+   overflow: scroll;
+   flex-shrink: 1;
+   flex-grow: 1;
+}
+
+.stretched-tabs {
+   display: flex;
+   overflow: hidden;
+   margin: 0;
+   flex: 1;
+   height: calc(100vh - 64px); // Can we avoid this?
+}
+
+@media screen and (max-width: 599px) {
+   .stretched-tabs {
+      height: calc(100vh - 56px); // Can we avoid this?
+   }
 }
