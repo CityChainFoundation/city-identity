@@ -172,6 +172,52 @@
     </p>
 
   </mat-tab>
-  <mat-tab label="Profile"> Content 2 </mat-tab>
+  <mat-tab label="Profile">
+
+    <div *ngIf="identity?.identity" class="margin">
+
+      <div class="list-item">
+        <strong>ID</strong>
+        <span class="list-item-break">{{identity.identity.entityId}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Owner</strong>
+        <span class="list-item-break">{{identity.identity.owner}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Signature</strong>
+        <span class="list-item-break">{{identity.identity.signature}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Name</strong>
+        <span class="list-item-break">{{identity.identity.document.name}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Short Name</strong>
+        <span class="list-item-break">{{identity.identity.document.shortName}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Alias</strong>
+        <span class="list-item-break">{{identity.identity.document.alias}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Title</strong>
+        <span class="list-item-break">{{identity.identity.document.title}}</span>
+      </div>
+
+      <div class="list-item">
+        <strong>Email</strong>
+        <span class="list-item-break">{{identity.identity.document.email}}</span>
+      </div>
+
+    </div>
+
+  </mat-tab>
   <mat-tab label="Signing"> Content 3 </mat-tab>
 </mat-tab-group>

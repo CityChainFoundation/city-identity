@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IdentityService } from 'src/shared/identity.service';
 
 @Component({
   selector: 'app-main',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
 
-  constructor() {
-
+  constructor(public identity: IdentityService) {
+    this.identity.loadIdentity('PHRcZvY4z86XxXey1VykYosy3BecdTDnUi');
   }
 }

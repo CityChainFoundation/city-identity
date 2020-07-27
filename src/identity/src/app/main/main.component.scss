@@ -1,0 +1,27 @@
+
+.list-item {
+   display: flex;
+   margin-bottom: 0.4em;
+   box-sizing: border-box;
+}
+
+.list-item :nth-child(1) {
+   margin-right: 0.5em;
+   flex: 1;
+   display: block;
+}
+
+.list-item :nth-child(2) {
+   margin-left: 0.5em;
+   flex: 3;
+   display: block;
+}
+
+.list-item-break {
+   word-break: break-word;
+}
+
+
+.margin {
+   margin: 2em;
+}

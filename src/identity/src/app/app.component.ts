@@ -3,6 +3,7 @@ import { CordovaService } from '../shared/cordova.service';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ThemeService } from '../shared/theme.service';
 import { Observable } from 'rxjs';
+import { IdentityService } from '../shared/identity.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit {
 
   isDarkTheme: Observable<boolean>;
 
-  constructor(cordova: CordovaService, public overlayContainer: OverlayContainer, private themeService: ThemeService) {
+  constructor(cordova: CordovaService,
+              public overlayContainer: OverlayContainer,
+              public identity: IdentityService,
+              private themeService: ThemeService) {
 
     if (cordova.initialized) {
       console.log('Cordova not initialized yet');
@@ -26,6 +30,12 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isDarkTheme = this.themeService.isDarkTheme;
+
+    
+    // let result = await this.identity.api('https://identity.city-chain.org/api/identity/PHRcZvY4z86XxXey1VykYosy3BecdTDnUi');
+    // console.log(result);
+
+    // this.identity.api();
   }
 
   toggleDarkTheme(checked: boolean) {
