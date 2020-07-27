@@ -1,19 +1,9 @@
-<div class="app-container" [ngClass]="{'dark-theme': isDarkTheme | async}">
+<!-- <div class="app-container" [ngClass]="{'dark-theme': isDarkTheme | async}">
   <div class="app-header">
 
     <mat-toolbar color="primary">
-      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button> -->
       <span>City Chain Identity</span>
       <span class="toolbar-spacer"></span>
-      <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button> -->
-      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button> -->
-
       <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)"></mat-slide-toggle>
       
     </mat-toolbar>
@@ -22,4 +12,135 @@
   <div class="app-content mat-app-background">
     <router-outlet></router-outlet>
   </div>
+</div> -->
+
+
+<!-- <app-nav-menu class="app-header margin-not-bottom"></app-nav-menu>
+<div class="app-header-background"></div>
+
+<section class="app-content margin">
+  <router-outlet></router-outlet>
+</section>
+
+<app-footer class="app-footer margin"></app-footer>
+<div class="app-footer-background"></div> -->
+
+<!-- <div id="welcome" class="welcome" *ngIf="welcomeVisible" [@zoomOutOnLeave] [@fadeOutLeftBigOnLeave]></div> -->
+
+<div id="welcome" class="welcome noselect" *ngIf="welcomeVisible" [@fadeOutLeftBigOnLeave]>
+  <div class="welcome-content">
+
+    <div class="welcome-text">
+      <h3 class="mat-display-2 welcome-font-black" *ngIf="welcomeLoaded" [@fadeInUpOnEnter] [@fadeOutDownOnLeave]>Welcome back</h3>
+      <h4 class="mat-display-4 welcome-font-light" *ngIf="welcomeLoadedSecond" [@fadeInUpOnEnter] [@fadeOutDownOnLeave]>
+        Sondre</h4>
+    </div>
+    <img class="welcome-logo" src="assets/blockcore-light-256x256.png" *ngIf="welcomeLogo" [@fadeInDownOnEnter] [@fadeOutUpOnLeave]>
+    <div class="welcome-backdrop"></div>
+  </div>
 </div>
+
+<mat-sidenav-container class="sidenav-container" [ngClass]="{'dark-theme': isDarkTheme | async}">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar class="logo-icon" [matMenuTriggerFor]="animals">
+      <img src="assets/blockcore-light-180x180.png">
+      <div>Blockcore</div>
+    </mat-toolbar>
+
+    <mat-menu #animals="matMenu" hasBackdrop="true" backdropClass="menu-mode-backdrop" overlapTrigger="false">
+      <button mat-menu-item [matMenuTriggerFor]="accounts">Account</button>
+      <button mat-menu-item [matMenuTriggerFor]="servers">Server</button>
+      <button mat-menu-item [matMenuTriggerFor]="gateways">Gateway</button>
+    </mat-menu>
+
+    <mat-menu #accounts="matMenu">
+      <button mat-menu-item>Sondre</button>
+      <button mat-menu-item>Sondre Bjellås</button>
+      <button mat-menu-item>Hax0rz cat</button>
+    </mat-menu>
+
+    <mat-menu #servers="matMenu">
+      <button mat-menu-item>server.blockcore.net</button>
+      <button mat-menu-item>server.liberstad.com</button>
+      <button mat-menu-item>server.city-chain.org</button>
+    </mat-menu>
+
+    <mat-menu #gateways="matMenu">
+      <button mat-menu-item>gateway.blockcore.net</button>
+      <button mat-menu-item>gateway.liberstad.com</button>
+      <button mat-menu-item>gateway.city-chain.org</button>
+    </mat-menu>
+
+    <mat-nav-list class="menu-options">
+      <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>dashboard</mat-icon>
+        <div mat-line>Dashboard</div>
+      </a>
+      <a mat-list-item [routerLink]="['/apps']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>apps</mat-icon>
+        <div mat-line>Apps</div>
+      </a>
+      <a mat-list-item [routerLink]="['/search']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>search</mat-icon>
+        <div mat-line>Search</div>
+      </a>
+      <a mat-list-item [routerLink]="['/hubs']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon matBadge="2" matBadgeColor="primary">device_hub</mat-icon>
+        <div mat-line>Hubs</div>
+      </a>
+      <!-- <a mat-list-item [routerLink]="['/requests']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon matBadge="2" matBadgeColor="primary">announcement</mat-icon>
+        <div mat-line>Requests</div>
+      </a> -->
+      <a mat-list-item [routerLink]="['/messages']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon matBadge="28" matBadgeColor="accent" mat-list-icon>message</mat-icon>
+        <div mat-line>Messages</div>
+      </a>
+      <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>forum</mat-icon>
+        <div mat-line>Forums</div>
+      </a>
+      <a mat-list-item [routerLink]="['/gateway']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <div mat-line>Data</div>
+      </a>
+      <a mat-list-item [routerLink]="['/identity']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+        <div mat-line>Identity</div>
+      </a>
+      <a mat-list-item [routerLink]="['/setup']" routerLinkActive="active-link">
+        <mat-icon mat-list-icon>settings</mat-icon>
+        <div mat-line>Setup</div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span></span>
+
+      <span class="example-spacer">{{appState.title}}</span>
+
+      <button mat-icon-button matTooltip="Show conversation details" [style.margin]="'0 -5px'">
+        <mat-icon>info</mat-icon>
+      </button>
+
+      <button mat-icon-button matTooltip="Add Hub">
+        <mat-icon>add_circle</mat-icon>
+      </button>
+
+      <mat-icon class="example-icon">favorite</mat-icon>
+
+      <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)"></mat-slide-toggle>
+
+      <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon> -->
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

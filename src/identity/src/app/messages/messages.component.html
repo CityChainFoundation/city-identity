@@ -1,0 +1,223 @@
+<mat-sidenav-container class="example-container">
+   <mat-sidenav opened mode="side">
+
+      <input matInput type="search">
+
+      <mat-form-field class="search-full-width">
+         <mat-label>Search</mat-label>
+         <input matInput type="search" placeholder="Search messages and users">
+      </mat-form-field>
+
+      <mat-action-list>
+         <mat-list-item>
+            <mat-icon mat-list-icon matBadge="2" matBadgeColor="accent">account_circle</mat-icon>
+            <div mat-line>Dan</div>
+            <div mat-line class="dimmed">id:PTlsaksjkluihJHjk123hf</div>
+
+            <p><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+               </button>
+               <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                     <mat-icon>delete</mat-icon>
+                     <span>Remove hub</span>
+                  </button>
+               </mat-menu>
+            </p>
+
+         </mat-list-item>
+         <mat-list-item>
+            <mat-icon mat-list-icon matBadge="26" matBadgeColor="accent">insert_emoticon</mat-icon>
+            <div mat-line>Anonymous</div>
+            <div mat-line class="dimmed">id:P2KjasdvjksjdI</div>
+
+            <p><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+               </button>
+               <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                     <mat-icon>delete</mat-icon>
+                     <span>Remove hub</span>
+                  </button>
+               </mat-menu>
+            </p>
+
+         </mat-list-item>
+         <mat-list-item>
+            <mat-icon mat-list-icon>face</mat-icon>
+            <div mat-line>Sondre</div>
+            <div mat-line class="dimmed">id:Pas32j123klbv</div>
+
+            <p><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+               </button>
+               <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                     <mat-icon>delete</mat-icon>
+                     <span>Remove hub</span>
+                  </button>
+               </mat-menu>
+            </p>
+
+         </mat-list-item>
+      </mat-action-list>
+
+
+   </mat-sidenav>
+   <mat-sidenav opened mode="side" position="end" class="sidepanel">
+
+      <div class="sidepanel-top">
+         <!-- <button mat-button (click)="accordion.openAll()">Expand All</button>
+         <button mat-button (click)="accordion.closeAll()">Collapse All</button> -->
+
+         Chat Details
+
+         <button mat-icon-button color="primary">
+            <mat-icon>close</mat-icon>
+          </button>
+
+       </div>
+       <mat-accordion class="example-headers-align" multi>
+         <mat-expansion-panel>
+           <mat-expansion-panel-header>
+             <mat-panel-title>
+               Profile
+             </mat-panel-title>
+             <mat-panel-description>
+               Dan
+               <mat-icon>verified_user</mat-icon>
+             </mat-panel-description>
+           </mat-expansion-panel-header>
+
+           <mat-card class="profile-card">
+            <mat-card-header>
+               <div mat-card-avatar class="request-header-image"></div>
+               <mat-card-title>Dan</mat-card-title>
+               <mat-card-subtitle>id:PsPsadkjfdsT13Aab</mat-card-subtitle>
+            </mat-card-header>
+            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+               alt="Photo of a Shiba Inu"> -->
+            <mat-card-content>
+   
+               <mat-list>
+                  <mat-list-item><span class="dimmed list-margin">Nickname:</span> Dan The Man</mat-list-item>
+                  <mat-list-item><span class="dimmed list-margin">Tel:</span> 01010101</mat-list-item>
+                  <mat-list-item><span class="dimmed list-margin">Title:</span> The Man</mat-list-item>
+                </mat-list>
+   
+            </mat-card-content>
+            <mat-card-actions>
+               <!-- <button mat-flat-button color="primary">Block</button>&nbsp;
+               <button mat-flat-button color="accent">Reject</button>&nbsp; -->
+               <button mat-stroked-button>Block</button>
+            </mat-card-actions>
+         </mat-card>
+
+
+           <!-- <mat-form-field>
+             <mat-label>First name</mat-label>
+             <input matInput>
+           </mat-form-field>
+       
+           <mat-form-field>
+             <mat-label>Age</mat-label>
+             <input matInput type="number" min="1">
+           </mat-form-field> -->
+       
+         </mat-expansion-panel>
+       
+         <mat-expansion-panel>
+           <mat-expansion-panel-header>
+             <mat-panel-title>
+               Details
+             </mat-panel-title>
+             <mat-panel-description>
+               Statistics
+               <mat-icon>info</mat-icon>
+             </mat-panel-description>
+           </mat-expansion-panel-header>
+       
+           <mat-list>
+            <mat-list-item><span class="dimmed list-margin">Created:</span> 2019-01-01</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="dimmed list-margin">Coins sent:</span> 42.92123</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><span class="dimmed list-margin">Coins received:</span> 54.44</mat-list-item>
+          </mat-list>
+
+         </mat-expansion-panel>
+       
+         <mat-expansion-panel>
+           <mat-expansion-panel-header>
+             <mat-panel-title>
+               Actions
+             </mat-panel-title>
+             <mat-panel-description>
+               Danger Zone
+               <mat-icon>build_circle</mat-icon>
+             </mat-panel-description>
+           </mat-expansion-panel-header>
+       
+           <button mat-flat-button color="warn">Delete Chat History</button>
+           
+         </mat-expansion-panel>
+       </mat-accordion>
+
+   </mat-sidenav>
+
+   <div class="message-log">
+      <!-- <div class="message message-left">
+         <span class="message-time">2020-05-20 13:05</span>
+         How are you doing?
+      </div>
+
+      <div class="message message-right">
+         <span class="message-time">2020-05-20 13:10</span>
+         I'm great, thanks for asking!
+      </div>
+
+      
+      <div class="message message-right">
+         <span class="message-time">2020-05-20 14:44</span>
+         <p>You sent:</p>
+         
+         <mat-card class="money-card">
+            <mat-card-header>
+               <mat-icon mat-card-avatar class="card-avatar-icon">attach_money</mat-icon>
+               <mat-card-title>2.12305 BTC</mat-card-title>
+               <mat-card-subtitle>Payment</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+   
+               <mat-list>
+                  <mat-list-item><span class="dimmed list-margin">Message:</span> Keep it secret, keep it hidden, keep it safe.</mat-list-item>
+                </mat-list>
+   
+            </mat-card-content>
+            <mat-card-actions>
+               <button mat-stroked-button>View details</button>
+            </mat-card-actions>
+         </mat-card>
+
+      </div>
+
+      <div class="message message-left">
+         <span class="message-time">2020-05-20 16:59</span>
+         Wow, thank you! Now I can finally buy myself a new t-shirt!
+      </div> -->
+      
+      <div *ngFor="let msg of messages" class="message" [ngClass]="{'message-right': msg.self, 'message-left': !msg.self}" >
+         <span class="message-time">{{msg.date}}</span>
+         {{msg.content}}
+      </div>
+
+   </div>
+
+   <mat-form-field class="message-input-full-width">
+      <input matInput type="search" [(ngModel)]="message" placeholder="Type your message">
+   </mat-form-field>
+   <button mat-button (click)=broadcastToHubs()>Broadcast To Hubs</button>
+   <button mat-button (click)=broadcastToHubsRelayed()>Broadcast To Hubs (Relayed)</button>
+   <button mat-button (click)=broadcastToGateways()>Broadcast To Gatways</button>
+
+</mat-sidenav-container>

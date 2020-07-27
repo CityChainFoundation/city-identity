@@ -1,0 +1,91 @@
+<div class="setup-container">
+
+  <div [class.mat-elevation-z8]="true" class="setup-section">
+
+    <h1>Choose a Hub</h1>
+
+    <mat-form-field>
+      <mat-label>Select an hub</mat-label>
+      <mat-select [(value)]="selectedHubId">
+        <mat-option *ngFor="let hub of hubs" [value]="hub.id">{{hub.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- <mat-card class="request-card" *ngIf="loading">
+      <mat-card-header>
+        <mat-card-title>Loading Identity Profile...</mat-card-title>
+        <mat-card-subtitle>Loading Identity {{selectedHubId}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <i class="fas fa-cog fa-spin"></i>
+      </mat-card-content>
+    </mat-card> -->
+
+    <!-- <mat-card class="request-card" *ngIf="hub"  [@flipInYOnEnter] [@flipOutYOnLeave] [@enter] [@leave]> -->
+
+    <mat-card class="request-card" *ngIf="hub"  [@flipInYOnEnter] [@flipOutYOnLeave]>
+      <mat-card-header>
+        <div mat-card-avatar class="request-header-image"></div>
+        <mat-card-title>{{hub.name}}</mat-card-title>
+        <mat-card-subtitle>id:{{hub.id}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Host: {{hub.host}}</p>
+        <p>Updated: {{hub.updated}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button>Show Full Profile</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- <div *ngIf="hub" [@enter] [@leave]>YEEEH!!</div> -->
+
+    <!-- <div [@rubberBand]="rubberState"></div>
+    <div [@collapse]="collapseState"></div> -->
+
+  </div>
+
+</div>
+
+<!-- <h1>Setup your Blockcore Hub</h1>
+
+<p>
+  Hi and welcome to your Blockcore Hub. There are a few configuration options you must decide before we can continue.
+</p>
+
+<a [routerLink]="['/dashboard']">Dashboard</a>
+<a [routerLink]="['/dashboard2']">Dashboard 2</a>
+<a [routerLink]="['/gateway']">Gateway</a>
+<a [routerLink]="['/identity']">Identity</a>
+
+<h2>Supported Chains:</h2>
+
+<div class="chains-home">
+  <ul>
+    <li class="chain-home-item" *ngFor="let chain of setup.chains">
+
+      <input [id]="'chain' + chain.name" type="checkbox">
+      <label [for]="'chain' + chain.name">
+        <img [ngClass]="{'mode-aware': chain.filter}" [src]="chain.icon">
+        {{chain.name}}
+      </label>
+    </li>
+  </ul>
+</div>
+
+<h2>Recovery Phrase:</h2>
+
+<i class="fas fa-key input-icon"></i>
+<input class="input-search box" type="search" [(ngModel)]="recoveryPhrase" placeholder="Recovery Phrase">
+
+<h2>Gateway:</h2>
+
+<i class="fas fa-link input-icon"></i>
+<input class="input-search box" type="search" [(ngModel)]="gateway" placeholder="Gateway">
+
+<button class="input-button">
+  
+  <i class="fas fa-save"></i>
+  <i class="fas fa-cog fa-spin"></i>
+
+   Save</button> -->

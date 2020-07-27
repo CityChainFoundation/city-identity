@@ -13,6 +13,7 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-electron": "^1.1.1",
     "cordova-windows": "^7.0.1"
@@ -27,7 +28,8 @@
     "platforms": [
       "browser",
       "electron",
-      "windows"
+      "windows",
+      "android"
     ]
   }
 }
